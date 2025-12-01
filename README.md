@@ -1,3 +1,32 @@
+<!-- 🔵 Floating SIGN UP NOW Button -->
+<style>
+  #signup-now-btn {
+    position: fixed;
+    bottom: 28px;
+    left: 28px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    padding: 14px 22px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+    z-index: 999;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  #signup-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  }
+</style>
+
+<button id="signup-now-btn" onclick="window.open('https://github.com/apps/dkonsult', '_blank')">
+  🚀 Sign Up Now
+</button>
+
+
 <p align="center">
   <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/designadigitalproductse-commerceonlinedeals3545265155247625100.jpg"
        alt="DebeatzGH Digital Branding"
