@@ -1,3 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --nav-bg: rgba(13, 17, 23, 0.95);
+            --nav-border: #30363d;
+            --nav-accent: #58a6ff;
+            --nav-hover: #1f6feb;
+            --glow-color: rgba(88, 166, 255, 0.6);
+        }
+
+        /* Dock Container */
+        .nav-dock {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            z-index: 10000;
+        }
+
+        /* Launcher (Button with the > icon) */
+        #nav-launcher {
+            width: 40px;
+            height: 40px;
+            background: var(--nav-bg);
+            border: 1px solid var(--nav-border);
+            color: var(--nav-accent);
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            outline: none;
+        }
+
+        #nav-launcher.open {
+            transform: rotate(-180deg);
+            background: var(--nav-hover);
+            color: white;
+            border-color: var(--nav-accent);
+        }
+
+        /* Button Group Hidden State */
+        .nav-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .nav-group.active {
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        /* Navigator Tiny Arrows */
+        .nav-btn {
+            width: 36px;
+            height: 36px;
+            background: var(--nav-bg);
+            border: 1px solid var(--nav-border);
+            color: #c9d1d9;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0.5) translateX(40px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            position: relative;
+        }
+
+        .nav-group.active .nav-btn {
+            opacity: 1;
+            transform: scale(1) translateX(0);
+        }
+
+        /* Heartbeat Glow Animation */
+        @keyframes heartbeatGlow {
+            0% { box-shadow: 0 0 0 0 var(--glow-color); transform: scale(1); }
+            50% { box-shadow: 0 0 20px 8px var(--glow-color); transform: scale(1.15); }
+            100% { box-shadow: 0 0 0 0 var(--glow-color); transform: scale(1); }
+        }
+
+        .pulse {
+            animation: heartbeatGlow 1.2s ease-in-out;
+        }
+
+        .nav-btn:hover {
+            background: var(--nav-hover);
+            color: white;
+            border-color: var(--nav-accent);
+        }
+
+        /* Staggered transition delays */
+        .nav-group.active .nav-btn:nth-child(1) { transition-delay: 0.1s; }
+        .nav-group.active .nav-btn:nth-child(2) { transition-delay: 0.2s; }
+        .nav-group.active .nav-btn:nth-child(3) { transition-delay: 0.3s; }
+
+        svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+</head>
+<body>
+
+    <div class="nav-dock">
+        <button id="nav-launcher" onclick="toggleNav()">
+            <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+
+        <div class="nav-group" id="navGroup">
+            <button class="nav-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">
+                <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            </button>
+
+            <a href="https://debeatzgh1.github.io/Home-/" class="nav-btn" title="Go Home">
+                <svg viewBox="0 0 24 24" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            </a>
+
+            <button class="nav-btn" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" title="Scroll to Bottom">
+                <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            const group = document.getElementById('navGroup');
+            const launcher = document.getElementById('nav-launcher');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            const isOpening = group.classList.toggle('active');
+            launcher.classList.toggle('open');
+
+            if (isOpening) {
+                buttons.forEach((btn, index) => {
+                    // Reset animation state
+                    btn.classList.remove('pulse');
+                    // Force a tiny delay so the browser sees the removal
+                    setTimeout(() => {
+                        // Apply heartbeat pulse
+                        btn.classList.add('pulse');
+                    }, (index + 1) * 150);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+
 <style>
   /* 🌟 Fade Slide Animation */
   @keyframes fadeSlideUp {
@@ -179,10 +340,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 </style>
 
-<button id="signup-now-btn" onclick="window.open('https://github.com/apps/dkonsult', '_blank')">
-  🚀 Sign Up Now
-</button>
-
 
 <p align="center">
   <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/designadigitalproductse-commerceonlinedeals3545265155247625100.jpg"
@@ -190,7 +347,7 @@ document.addEventListener("DOMContentLoaded", function () {
        style="max-width:100%; height:auto; border-radius:12px;"/>
 </p>
 
-# 🌐 DebeatzGH Digital Hub  
+# 🌐 My Digital Hub  
 ### Elevate Your Digital Journey With AI • Automation • Online Business • E-Commerce
 
 Welcome to the **DebeatzGH Digital Hub**, your central access point for professional tools, digital services, online business systems, and AI-powered solutions.
@@ -290,7 +447,7 @@ Each page opens inside a **clean iframe viewer** for easy navigation and a moder
   <div id="blog-carousel">
     <button id="close-carousel-btn"
             style="float:right; font-size:20px; background:transparent; border:none; cursor:pointer;">✖️</button>
-    <h2 style="margin-bottom:20px;">DebeatzGH Digital Hub Menu</h2>
+    <h2 style="margin-bottom:20px;">My Digital Hub Menu</h2>
 
     <!-- CARD 1 -->
     <div class="blog-card">
