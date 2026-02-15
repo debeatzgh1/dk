@@ -342,7 +342,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <p align="center">
-  <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/08/designadigitalproductse-commerceonlinedeals3545265155247625100.jpg"
+  <img src="https://debeatzgh.wordpress.com/wp-content/uploads/2025/12/screenshot_20251129-211026_14052189003624658858.png"
        alt="DebeatzGH Digital Branding"
        style="max-width:100%; height:auto; border-radius:12px;"/>
 </p>
@@ -350,9 +350,9 @@ document.addEventListener("DOMContentLoaded", function () {
 # 🌐 My Digital Hub  
 ### Elevate Your Digital Journey With AI • Automation • Online Business • E-Commerce
 
-Welcome to the **DebeatzGH Digital Hub**, your central access point for professional tools, digital services, online business systems, and AI-powered solutions.
+Welcome to the **My Digital Hub**, your central access point for professional tools, digital services, online business systems, and AI-powered solutions.
 
-Our mission is to provide **accessible, modern, and user-friendly digital solutions** for creators, online hustlers, marketers, students, and businesses looking to scale online.
+My mission is to provide **accessible, modern, and user-friendly digital solutions** for creators, online hustlers, marketers, students, and businesses looking to scale online.
 
 Use the **floating “📚” button** to open the interactive carousel where you can explore:  
 - 🌍 **Official Website & Portfolio**  
