@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // -------------------------------------------------------
   const button = document.createElement("a");
   button.href = "#";
-  button.innerText = "📌 Updates";
+  button.innerText = "📌 Port-";
   Object.assign(button.style, {
     background: "#16a34a",
     color: "#fff",
@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // 🔹 Open Iframe on click
   button.addEventListener("click", function (e) {
     e.preventDefault();
-    document.getElementById("modal-iframe").src = "https://debeatzgh1.github.io/Digital-Creator-s-Essential-Guides-Tools/";
+    document.getElementById("modal-iframe").src = "https://debeatzgh1.github.io/Personal-Portfolio-site-/";
     modal.style.display = "block";
   });
 
