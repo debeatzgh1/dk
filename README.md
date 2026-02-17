@@ -367,7 +367,7 @@
     position: fixed;
     z-index: 9999;
     left: 0;
-    top: 0;
+    bottom: 0;
     width: 110%;
     height: 120%;
     background: rgba(0,0,0,0.6);
