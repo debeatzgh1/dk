@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -198,7 +198,7 @@
         .nav-dock {
             position: fixed;
             right: 20px;
-            top: 50%;
+            bottom: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
