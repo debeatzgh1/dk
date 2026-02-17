@@ -3,6 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debeatzgh Ultimate Ecosystem</title>
+    <style>
+        :root {
+            --yt-red: #FF0000;
+            --spotify-green: #1DB954;
+            --cyber-cyan: #00f2ff;
+            --deep-pink: #FF1493;
+            --bg-dark: #0d1117;
+            --glass: rgba(15, 15, 15, 0.9);
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            background: var(--bg-dark); 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- GLOBAL TOP BANNER SYSTEM --- */
+        .master-banner-container {
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .floating-banner {
+            width: 350px;
+            height: 52px;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 6px 0 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* --- THEMES --- */
+        .banner-productivity { border-color: var(--deep-pink); box-shadow: 0 0 15px rgba(255, 20, 147, 0.3); }
+        .banner-entertainment { border-color: var(--yt-red); box-shadow: 0 0 15px rgba(255, 0, 0, 0.3); }
+        .banner-ui { border-color: var(--cyber-cyan); box-shadow: 0 0 15px rgba(0, 242, 255, 0.3); }
+
+        .banner-text-slider {
+            flex: 1;
+            height: 20px;
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        .slide-inner {
+            display: flex;
+            flex-direction: column;
+            animation: verticalSlide 6s infinite;
+        }
+
+        .slide-inner span {
+            height: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        @keyframes verticalSlide {
+            0%, 25% { transform: translateY(0); }
+            33%, 58% { transform: translateY(-20px); }
+            66%, 91% { transform: translateY(-40px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* --- BUTTONS --- */
+        .action-btn {
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: none;
+            color: white;
+            font-weight: 900;
+            font-size: 0.7rem;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* --- IFRAME OVERLAY --- */
+        #master-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.97);
+            z-index: 20000;
+            display: none;
+            flex-direction: column;
+        }
+
+        .overlay-header {
+            height: 60px;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #111;
+            border-bottom: 2px solid #333;
+        }
+
+        #master-frame { width: 100%; flex-grow: 1; border: none; background: white; }
+
+        /* --- SMART TOGGLE DOCK --- */
+        .mode-dock {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--glass);
+            padding: 8px;
+            border-radius: 20px;
+            display: flex;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            z-index: 9999;
+        }
+
+        .dock-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .dot-pink { background: var(--deep-pink); }
+        .dot-red { background: var(--yt-red); }
+        .dot-cyan { background: var(--cyber-cyan); }
+        .dock-dot:hover { transform: scale(1.4); }
+
+    </style>
+</head>
+<body>
+
+    <div class="master-banner-container">
+        
+        <div id="banner-prod" class="floating-banner banner-productivity">
+            <div class="banner-text-slider">
+                <div class="slide-inner">
+                    <span style="color: var(--deep-pink);">🚀 Lifestyle Productivity</span>
+                    <span style="color: var(--deep-pink);">💡 Tools & Ideas</span>
+                    <span style="color: var(--deep-pink);">📈 All in one place!</span>
+                </div>
+            </div>
+            <button class="action-btn" style="background: var(--deep-pink);" onclick="launch('https://msha.ke/debeatzgh', 'Productivity Hub')">Open Hub</button>
+        </div>
+
+        <div id="banner-ent" class="floating-banner banner-entertainment" style="display: none;">
+            <div class="banner-text-slider">
+                <div class="slide-inner">
+                    <span style="color: var(--yt-red);">🎬 Entertainment Hub</span>
+                    <span style="color: var(--yt-red);">🎵 Stream Playlists</span>
+                    <span style="color: var(--yt-red);">🔴 Live Updates</span>
+                </div>
+            </div>
+            <button class="action-btn" style="background: var(--yt-red);" onclick="launch('https://debeatzgh1.github.io/E-Hub-/', 'Entertainment Player')">Watch</button>
+        </div>
+
+        <div id="banner-ui" class="floating-banner banner-ui" style="display: none;">
+            <div class="banner-text-slider">
+                <div class="slide-inner">
+                    <span style="color: var(--cyber-cyan);">🖥️ Browse UI & Interfaces</span>
+                    <span style="color: var(--cyber-cyan);">🎨 Modern Styling</span>
+                    <span style="color: var(--cyber-cyan);">📂 Design Systems</span>
+                </div>
+            </div>
+            <button class="action-btn" style="background: var(--cyber-cyan); color: #000;" onclick="launch('https://debeatzgh1.github.io/me-/', 'UI Portfolio')">Explore</button>
+        </div>
+
+    </div>
+
+    <div id="master-overlay">
+        <div class="overlay-header" id="overlay-header-bar">
+            <span id="overlay-title" style="font-weight: bold; text-transform: uppercase; font-size: 0.8rem;">Resource View</span>
+            <div style="display:flex; gap: 10px;">
+                <button onclick="closeOverlay()" style="background: #444; color: white; border: none; padding: 6px 15px; border-radius: 4px; cursor: pointer;">Close</button>
+            </div>
+        </div>
+        <iframe id="master-frame" src=""></iframe>
+    </div>
+
+    <div class="mode-dock">
+        <div class="dock-dot dot-pink" title="Productivity Mode" onclick="switchMode('prod')"></div>
+        <div class="dock-dot dot-red" title="Entertainment Mode" onclick="switchMode('ent')"></div>
+        <div class="dock-dot dot-cyan" title="UI/UX Mode" onclick="switchMode('ui')"></div>
+    </div>
+
+    <script>
+        const banners = {
+            prod: document.getElementById('banner-prod'),
+            ent: document.getElementById('banner-ent'),
+            ui: document.getElementById('banner-ui')
+        };
+
+        const overlay = document.getElementById('master-overlay');
+        const frame = document.getElementById('master-frame');
+        const header = document.getElementById('overlay-header-bar');
+
+        // Switch Banner Modes
+        function switchMode(mode) {
+            Object.values(banners).forEach(b => b.style.display = 'none');
+            banners[mode].style.display = 'flex';
+            // Save preference
+            localStorage.setItem('master-mode', mode);
+        }
+
+        // Launch Iframe
+        function launch(url, title) {
+            document.getElementById('overlay-title').innerText = title;
+            frame.src = url;
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+
+            // Change header color based on active mode
+            const activeMode = localStorage.getItem('master-mode');
+            const colors = { prod: '#FF1493', ent: '#FF0000', ui: '#00f2ff' };
+            header.style.borderBottomColor = colors[activeMode];
+        }
+
+        function closeOverlay() {
+            overlay.style.display = 'none';
+            frame.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Load saved mode or default to prod
+        window.onload = () => {
+            const saved = localStorage.getItem('master-mode') || 'prod';
+            switchMode(saved);
+        };
+    </script>
+
+</body>
+</html>
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         :root {
             --ui-accent: #00f2ff; /* Cyber Cyan */
