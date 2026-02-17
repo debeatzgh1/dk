@@ -394,7 +394,7 @@
 
   .close-btn {
     position: absolute;
-    top: 10px;
+    bottom: 10px;
     right: 18px;
     font-size: 30px;
     color: #333;
@@ -421,7 +421,7 @@ document.addEventListener("DOMContentLoaded", function () {
   btnGroup.className = "floating-btn-group";
   Object.assign(btnGroup.style, {
     position: "fixed",
-    top: "20px",          // Top-left positioning
+    bottom: "20px",          // Top-left positioning
     left: "20px",
     zIndex: "9999",
     animation: "heartbeat 2.5s infinite ease-in-out, fadeSlideUp 0.6s ease-out forwards"
