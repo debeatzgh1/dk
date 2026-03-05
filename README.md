@@ -71,13 +71,13 @@
         #gdev-frame { flex-grow: 1; width: 100%; border: none; background: #fff; }
 
         .close-gdev {
-            position: absolute; top: 20px; right: 25px; width: 40px; height: 40px;
+            position: absolute; top: 20px; right: 25px; width: 40px; height: 30px;
             background: var(--dark-card); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; color: #fff; z-index: 20;
         }
 
-        /* HIRE ME BUTTON STYLE */
+        /* CONTACT ME BUTTON STYLE */
         .hire-btn {
             background: var(--g-green);
             color: white;
@@ -131,7 +131,7 @@
                     </button>
                     <a href="https://wa.me/233549757544?text=Hi%20DeBeatz,%20I%20saw%20your%20Google%20Dev%20profile%20and%20would%20like%20to%20discuss%20a%20project." 
                        target="_blank" class="hire-btn">
-                        <i class="fas fa-briefcase"></i> Hire Me
+                        <i class="fas fa-briefcase"></i> Contact Me
                     </a>
                 </div>
             </div>
