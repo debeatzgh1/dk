@@ -939,3 +939,6 @@ Each page opens inside a **clean iframe viewer** for easy navigation and a moder
     iframeOverlay.style.display = 'none';
   };
 </script>
+
+
+<iframe src="https://debeatzgh.wordpress.com/key-offers/" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
