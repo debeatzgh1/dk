@@ -45,7 +45,7 @@
         }
 
         .status-dot {
-            position: absolute; bottom: 2px; right: 2px; width: 10px; height: 10px;
+            position: absolute; bottom: 2px; right: 2px; width: 7px; height: 7px;
             background: var(--g-green); border-radius: 50%; border: 2px solid var(--dark-card);
         }
 
@@ -74,10 +74,10 @@
         }
 
         /* 3. IFRAME & FOOTER */
-        #gdev-frame { flex-grow: 1; width: 100%; border: none; background: #fff; }
+        #gdev-frame { flex-grow: 1; width: 90%; border: none; background: #fff; }
 
         .close-gdev {
-            position: absolute; top: 20px; right: 25px; width: 40px; height: 30px;
+            position: absolute; top: 20px; right: 25px; width: 35px; height: 30px;
             background: var(--dark-card); border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             cursor: pointer; color: #fff; z-index: 20;
@@ -133,7 +133,7 @@
                 
                 <div class="flex items-center gap-3">
                     <button id="copy-btn" class="text-[11px] text-[#8ab4f8] font-bold px-4 py-2 hover:text-white transition" onclick="copyProfileLink()">
-                        Copy Profile
+                        Copy url
                     </button>
                     <a href="https://wa.me/233549757544?text=Hi%20DeBeatz,%20I%20saw%20your%20Google%20Dev%20profile%20and%20would%20like%20to%20discuss%20a%20project." 
                        target="_blank" class="hire-btn">
