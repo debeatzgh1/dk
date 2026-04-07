@@ -1,3 +1,91 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Portfolio | Capture the Moment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1493397212122-2b85def82c9b?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="relative h-[70vh] flex items-center justify-center text-center hero-gradient px-6">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-8xl font-extrabold text-white tracking-tighter mb-6 uppercase">
+                Capture <span class="text-gray-400">the</span> Moment
+            </h1>
+            <p class="text-gray-200 text-lg md:text-xl font-light mb-10 tracking-wide max-w-2xl mx-auto">
+                Elevating digital experiences through minimalist design and high-performance development.
+            </p>
+            <a href="https://debeatzgh1.github.io/Personal-Portfolio-site-/" 
+               class="inline-block border-2 border-white text-white px-10 py-3 text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300">
+                Explore Work
+            </a>
+        </div>
+    </header>
+
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-gray-100 pb-8">
+                <h2 class="text-3xl font-bold tracking-tight text-black uppercase">Core Services</h2>
+                <p class="text-gray-500 font-light max-w-xs text-sm">Providing bespoke digital solutions across AI development, business automation, and modern web design.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden bg-gray-100 mb-6 aspect-video flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800" alt="AI" class="group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">AI Solutions</h3>
+                    <p class="text-gray-600 font-light text-sm mb-4">Implementing cutting-edge artificial intelligence into your daily workflow.</p>
+                    <a href="https://debeatzgh1.github.io/ai-chat/" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1">View Project</a>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden bg-gray-100 mb-6 aspect-video flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Business" class="group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Side Hustle Kits</h3>
+                    <p class="text-gray-600 font-light text-sm mb-4">Everything you need to launch and scale your online business successfully.</p>
+                    <a href="https://debeatzgh1.github.io/The-Ultimate-Guide-to-Side-Hustle/" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1">View Guide</a>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div class="overflow-hidden bg-gray-100 mb-6 aspect-video flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=800" alt="Design" class="group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                    <p class="text-gray-600 font-light text-sm mb-4">Clean code, high-speed performance, and minimalist UI components.</p>
+                    <a href="https://debeatzgh1.github.io/Modern-homepage-styling-with-TailwindCSS-/" class="text-xs font-bold uppercase tracking-widest border-b border-black pb-1">View Components</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-10 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-wrap gap-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold">
+            <a href="https://debeatzgh1.github.io/Debeatzgh-Collaborators-Hub/" class="hover:text-black">Collaborators</a>
+            <a href="https://debeatzgh1.github.io/Decode-AI-starter-kit-/" class="hover:text-black">AI Kit</a>
+            <a href="https://debeatzgh1.github.io/firebase-front-end-components/" class="hover:text-black">Firebase</a>
+            <a href="https://debeatzgh1.github.io/sales/" class="hover:text-black">Sales</a>
+            <a href="https://debeatzgh1.github.io/menu-widget-/" class="hover:text-black">Widgets</a>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
 <iframe src="https://docs.google.com/document/d/1xfCdI-9MI8CnJBo4VjGlHYeD65KtJc7fObkd_g83qJ8/edit?usp=drivesdk" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 
 
