@@ -86,7 +86,7 @@
 
 
 
-<iframe src="https://docs.google.com/document/d/1xfCdI-9MI8CnJBo4VjGlHYeD65KtJc7fObkd_g83qJ8/edit?usp=drivesdk" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://debeatzgh.wordpress.com/portfolio-3/" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
 
 
 
