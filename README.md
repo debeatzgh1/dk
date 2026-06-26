@@ -1,398 +1,790 @@
-<!-- Elfsight Announcement Bar | Ads -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-da4c4e26-f1fe-4865-98e5-07ab2384d659" data-elfsight-app-lazy></div>
-
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brand Hub | Digital Ecosystem</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .active-thumb { border-color: #3b82f6; transform: scale(1.05); }
-        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kumah David | Digital Portfolio Hub</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#07111f;
+    --card:#101c2e;
+    --card2:#13243d;
+    --primary:#3b82f6;
+    --secondary:#8b5cf6;
+    --accent:#06b6d4;
+    --text:#f8fafc;
+    --muted:#94a3b8;
+    --border:rgba(255,255,255,0.08);
+    --shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:linear-gradient(180deg,#06101d 0%, #0b1728 100%);
+    color:var(--text);
+    overflow-x:hidden;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    min-height:100vh;
+    padding:40px 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,var(--primary),transparent 70%);
+    opacity:.15;
+    top:-150px;
+    right:-100px;
+    filter:blur(40px);
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle,var(--secondary),transparent 70%);
+    opacity:.12;
+    bottom:-200px;
+    left:-120px;
+    filter:blur(50px);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:650px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(59,130,246,.12);
+    border:1px solid rgba(59,130,246,.25);
+    color:#bfdbfe;
+    font-size:.85rem;
+    margin-bottom:25px;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:#22c55e;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%{transform:scale(1);opacity:1;}
+    50%{transform:scale(1.6);opacity:.5;}
+    100%{transform:scale(1);opacity:1;}
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,7vw,5rem);
+    line-height:1.05;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:var(--muted);
+    font-size:1.08rem;
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+.hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.btn{
+    padding:15px 24px;
+    border:none;
+    border-radius:14px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    transition:.3s ease;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+    color:white;
+    box-shadow:0 10px 30px rgba(59,130,246,.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.15);
+    background:rgba(255,255,255,.04);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,.08);
+}
+
+.hero-preview{
+    position:relative;
+    z-index:2;
+    width:450px;
+    max-width:100%;
+}
+
+.preview-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+}
+
+.preview-image{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.preview-content{
+    padding:25px;
+}
+
+.preview-content h3{
+    font-size:1.5rem;
+    margin-bottom:10px;
+}
+
+.preview-content p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    padding:90px 6%;
+}
+
+.section-header{
+    margin-bottom:45px;
+}
+
+.section-tag{
+    color:#60a5fa;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.82rem;
+    margin-bottom:15px;
+    display:block;
+}
+
+.section-title{
+    font-size:clamp(2rem,5vw,3rem);
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.section-desc{
+    color:var(--muted);
+    max-width:720px;
+    line-height:1.8;
+}
+
+/* ================= GRID ================= */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:24px;
+}
+
+.card{
+    background:linear-gradient(180deg,var(--card),var(--card2));
+    border:1px solid var(--border);
+    border-radius:24px;
+    overflow:hidden;
+    transition:.35s ease;
+    position:relative;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(59,130,246,.35);
+    box-shadow:0 20px 45px rgba(0,0,0,.3);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:24px;
+}
+
+.card-tag{
+    display:inline-block;
+    padding:7px 14px;
+    border-radius:999px;
+    background:rgba(59,130,246,.12);
+    color:#bfdbfe;
+    font-size:.72rem;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.card h3{
+    font-size:1.3rem;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.card-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.small-btn{
+    padding:11px 18px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.9rem;
+}
+
+.view-btn{
+    background:var(--primary);
+    color:white;
+}
+
+.external-btn{
+    background:rgba(255,255,255,.06);
+    color:white;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:24px;
+}
+
+.stat-box{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:24px;
+    padding:30px;
+    text-align:center;
+}
+
+.stat-box h2{
+    font-size:2.8rem;
+    margin-bottom:10px;
+    color:#60a5fa;
+}
+
+.stat-box p{
+    color:var(--muted);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:50px 6%;
+    border-top:1px solid rgba(255,255,255,.06);
+    text-align:center;
+}
+
+footer p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* ================= IFRAME MODAL ================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.92);
+    z-index:9999;
+    display:none;
+    flex-direction:column;
+}
+
+.modal-header{
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    background:#0f172a;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.modal-header h3{
+    font-size:1rem;
+}
+
+.close-btn{
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:700;
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    background:white;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column;
+    justify-content:center;
+    padding-top:120px;
+}
+
+.hero-preview{
+    width:100%;
+}
+
+.hero-actions{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.btn{
+    width:100%;
+    justify-content:center;
+}
+}
+</style>
 </head>
-<body class="bg-gray-100 font-sans text-slate-900 pb-20">
 
-    <div class="max-w-6xl mx-auto px-4 py-12 space-y-16">
-        
-        <section id="fax-section" class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-200">
-            <div class="bg-blue-600 p-4 text-white flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <span class="animate-pulse w-3 h-3 bg-red-400 rounded-full"></span>
-                    <h2 class="font-bold tracking-tight uppercase">Incoming Fax: System Status</h2>
-                </div>
-                <span class="text-xs font-mono opacity-80">REF_ID: 2026_DHUB</span>
-            </div>
-            
-            <div class="p-8 grid md:grid-cols-3 gap-8">
-                <div class="col-span-2 space-y-6">
-                    <h1 class="text-4xl font-black text-slate-800">Welcome to the Hub.</h1>
-                    <p class="text-slate-600 text-lg leading-relaxed">
-                        Data packets have been organized into three tiers. Following this brief, you will see our <span class="text-blue-600 font-bold">Automated Premium Tools</span> and finally our <span class="text-green-600 font-bold">User-Interactive Directory</span>.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold text-slate-500">#E-COMMERCE</span>
-                        <span class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold text-slate-500">#WEB3</span>
-                        <span class="bg-slate-100 border border-slate-200 px-3 py-1 rounded-full text-xs font-bold text-slate-500">#AI_TOOLS</span>
-                        <span class="bg-blue-100 border border-blue-200 px-3 py-1 rounded-full text-xs font-bold text-blue-600">NEW_ARRIVALS</span>
-                    </div>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border-2 border-dashed border-slate-200">
-                    <h3 class="font-bold mb-4 text-slate-700">Quick Stats</h3>
-                    <div class="space-y-3">
-                        <div class="flex justify-between text-sm"><span>Active Tools:</span> <span class="font-bold">18+</span></div>
-                        <div class="flex justify-between text-sm"><span>Network Status:</span> <span class="text-green-500 font-bold">Stable</span></div>
-                        <div class="flex justify-between text-sm"><span>Last Update:</span> <span class="font-bold">2 mins ago</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="auto-carousel" class="space-y-6">
-            <div class="flex justify-between items-end">
-                <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4">Premium Partners <span class="text-slate-400 font-normal">(Auto-Cycle)</span></h2>
-            </div>
-
-            <div class="relative rounded-3xl overflow-hidden h-[450px] shadow-2xl bg-black">
-                <div id="auto-track" class="flex h-full transition-transform duration-1000 ease-in-out">
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200" class="w-full h-full object-cover opacity-70" alt="Appgeyser">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent flex items-end p-12">
-                            <div class="max-w-xl">
-                                <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-xs font-bold uppercase mb-4 inline-block">App Builder</span>
-                                <h3 class="text-5xl font-black text-white">Appgeyser</h3>
-                                <p class="text-gray-300 mt-4 text-lg">The world's easiest platform to convert your creative ideas into fully functional Android apps.</p>
-                                <button class="mt-6 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-blue-500 hover:text-white transition">Launch Tool</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="min-w-full relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=1200" class="w-full h-full object-cover opacity-70" alt="Adsterra">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent flex items-end p-12">
-                            <div class="max-w-xl">
-                                <span class="bg-amber-500 text-white px-3 py-1 rounded-md text-xs font-bold uppercase mb-4 inline-block">Monetization</span>
-                                <h3 class="text-5xl font-black text-white">Adsterra</h3>
-                                <p class="text-gray-300 mt-4 text-lg">High-yield advertising network for publishers and advertisers seeking global reach.</p>
-                                <button class="mt-6 bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-amber-500 hover:text-white transition">Explore Adsterra</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="user-carousel" class="space-y-8">
-            <div class="text-center">
-                <span class="text-blue-600 font-bold text-sm tracking-widest uppercase">The Directory</span>
-                <h2 class="text-4xl font-black text-slate-800">Choose Your Path</h2>
-                <p class="text-slate-500 mt-2">Interact with the cards below to see more details in the viewer.</p>
-            </div>
-
-            <div class="grid lg:grid-cols-4 gap-6">
-                <div class="lg:col-span-1 space-y-4 max-h-[500px] overflow-y-auto pr-2 no-scrollbar">
-                    
-                    <div onclick="changeSlide(this, 'Telegram Earning', 'Join our verified crypto mining and earning bots on Telegram.', 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=800', 'EARNING')" class="cursor-pointer group bg-white p-3 rounded-2xl shadow-sm border-2 border-blue-500 transition-all hover:shadow-md">
-                        <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=150" class="w-full h-24 object-cover rounded-xl mb-2" alt="p1">
-                        <span class="text-[10px] font-black text-blue-600">#CRYPTO</span>
-                        <h4 class="font-bold text-sm">Telegram Bots</h4>
-                    </div>
-
-                    <div onclick="changeSlide(this, 'E-Commerce Global', 'Connect with Alibaba, Ecwid, and dropshipping tools.', 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800', 'COMMERCE')" class="cursor-pointer group bg-white p-3 rounded-2xl shadow-sm border-2 border-transparent hover:border-blue-200 transition-all">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=150" class="w-full h-24 object-cover rounded-xl mb-2" alt="p2">
-                        <span class="text-[10px] font-black text-green-600">#SHOPPING</span>
-                        <h4 class="font-bold text-sm">Global Markets</h4>
-                    </div>
-
-                    <div onclick="changeSlide(this, 'Creative Suite', 'Logo makers, Stylsi AI, and design automation.', 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800', 'DESIGN')" class="cursor-pointer group bg-white p-3 rounded-2xl shadow-sm border-2 border-transparent hover:border-blue-200 transition-all">
-                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=150" class="w-full h-24 object-cover rounded-xl mb-2" alt="p3">
-                        <span class="text-[10px] font-black text-purple-600">#AI_DESIGN</span>
-                        <h4 class="font-bold text-sm">Stylsi AI</h4>
-                    </div>
-
-                    <div onclick="changeSlide(this, 'Tech & Hosting', 'Hosterbox and technical infrastructure for websites.', 'https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=800', 'INFRA')" class="cursor-pointer group bg-white p-3 rounded-2xl shadow-sm border-2 border-transparent hover:border-blue-200 transition-all">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&w=150" class="w-full h-24 object-cover rounded-xl mb-2" alt="p4">
-                        <span class="text-[10px] font-black text-red-600">#HOSTING</span>
-                        <h4 class="font-bold text-sm">Hosterbox</h4>
-                    </div>
-
-                </div>
-
-                <div class="lg:col-span-3 h-[500px] relative rounded-3xl overflow-hidden shadow-2xl bg-white border border-slate-200">
-                    <img id="viewer-img" src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?auto=format&fit=crop&w=1000" class="w-full h-full object-cover transition-opacity duration-500" alt="Display">
-                    <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/40 to-transparent flex items-center p-12">
-                        <div class="max-w-md text-white">
-                            <span id="viewer-tag" class="bg-blue-500 px-2 py-1 rounded text-[10px] font-bold tracking-widest uppercase">EARNING</span>
-                            <h3 id="viewer-title" class="text-4xl font-black mt-2">Telegram Earning</h3>
-                            <p id="viewer-desc" class="text-slate-200 mt-4 leading-relaxed">Join our verified crypto mining and earning bots on Telegram.</p>
-                            <div class="mt-8 flex gap-3">
-                                <button class="bg-blue-600 px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition">View Full Catalog</button>
-                                <button class="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-lg font-bold hover:bg-white/20 transition">Copy Link</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <script>
-        // Auto Carousel Timing
-        let autoPos = 0;
-        const autoTrack = document.getElementById('auto-track');
-        setInterval(() => {
-            autoPos = (autoPos + 1) % 2; // Adjust based on number of slides
-            autoTrack.style.transform = `translateX(-${autoPos * 100}%)`;
-        }, 5000);
-
-        // User Interactive Carousel Function
-        function changeSlide(element, title, desc, img, tag) {
-            // Update Text & Image
-            const imgEl = document.getElementById('viewer-img');
-            imgEl.style.opacity = '0';
-            
-            setTimeout(() => {
-                imgEl.src = img;
-                document.getElementById('viewer-title').innerText = title;
-                document.getElementById('viewer-desc').innerText = desc;
-                document.getElementById('viewer-tag').innerText = tag;
-                imgEl.style.opacity = '1';
-            }, 300);
-
-            // Update Thumbnail Styling
-            document.querySelectorAll('#user-carousel div[onclick]').forEach(card => {
-                card.classList.remove('border-blue-500', 'shadow-md');
-                card.classList.add('border-transparent');
-            });
-            element.classList.remove('border-transparent');
-            element.classList.add('border-blue-500', 'shadow-md');
-        }
-    </script>
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Debeatzgh Digital Ecosystem</title>
-    <style>
-        :root {
-            --bg: #0d1117;
-            --card: #161b22;
-            --accent: #FF1493; /* Deep Pink */
-            --accent-glow: rgba(255, 20, 147, 0.3);
-            --text-main: #e6edf3;
-            --text-dim: #8b949e;
-            --border: #30363d;
-        }
-
-        * { box-sizing: border-box; transition: all 0.3s ease; }
-
-        body {
-            margin: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        /* --- SECTION 1: INTERACTIVE BANNER OVERLAYS --- */
-        .banner-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 5%;
-            margin-top: 20px;
-        }
-
-        .banner-card {
-            position: relative;
-            height: 180px;
-            background: linear-gradient(135deg, #1c2128 0%, #0d1117 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 25px;
-        }
-
-        .banner-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .banner-card h3 {
-            margin: 0;
-            font-size: 1.2rem;
-            color: var(--accent);
-        }
-
-        .banner-card p {
-            font-size: 0.85rem;
-            color: var(--text-dim);
-            margin: 10px 0 0;
-        }
-
-        .banner-card::after {
-            content: 'Launch Preview ↗';
-            position: absolute;
-            bottom: 15px;
-            right: 15px;
-            font-size: 0.7rem;
-            font-weight: bold;
-            opacity: 0.5;
-        }
-
-        /* --- SECTION 2: AUTO-SLIDE GLOBAL FEED --- */
-        .marquee-section {
-            background: #000;
-            padding: 50px 0;
-            border-top: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .marquee-container {
-            display: flex;
-            width: max-content;
-            animation: scroll 60s linear infinite;
-        }
-
-        .marquee-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 30px;
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            margin-right: 20px;
-            text-decoration: none;
-            color: inherit;
-            white-space: nowrap;
-        }
-
-        .marquee-item:hover {
-            border-color: var(--accent);
-            background: #21262d;
-        }
-
-        .badge {
-            background: var(--accent);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.6rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .category-tag {
-            color: var(--text-dim);
-            font-size: 0.7rem;
-            font-family: monospace;
-        }
-
-        /* --- IFRAME OVERLAY SYSTEM --- */
-        #overlay-container {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.9);
-            backdrop-filter: blur(10px);
-            display: none;
-            z-index: 10000;
-            flex-direction: column;
-        }
-
-        .overlay-header {
-            height: 60px;
-            padding: 0 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: var(--card);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .close-trigger {
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        #overlay-iframe {
-            width: 100%;
-            flex-grow: 1;
-            border: none;
-        }
-
-        /* --- ANIMATIONS --- */
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .section-title {
-            padding: 0 5%;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            margin-top: 40px;
-        }
-    </style>
-</head>
 <body>
 
-    <h2 class="section-title">01. Interactive Workspaces</h2>
-    <div class="banner-grid" id="bannerGrid">
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            <span class="dot"></span>
+            Professional Digital Portfolio & Resource Ecosystem
         </div>
 
-    <h2 class="section-title">02. Global Resource Marquee</h2>
-    <div class="marquee-section">
-        <div class="marquee-container" id="marqueeTrack">
+        <h1>
+            Build. Showcase.
+            <span>Scale Your Brand.</span>
+        </h1>
+
+        <p>
+            Modern landing page experience for creators, developers,
+            entrepreneurs, and AI innovators. Showcase projects,
+            premium tools, services, portfolio work, side hustle ideas,
+            and digital products professionally on GitHub Pages.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+                Explore Portfolio
+            </a>
+
+            <a href="https://debeatzgh1.github.io/" target="_blank" class="btn btn-outline">
+                Open Main Hub
+            </a>
+        </div>
+
+    </div>
+
+    <div class="hero-preview">
+        <div class="preview-card">
+
+            <img class="preview-image"
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
+            alt="Portfolio">
+
+            <div class="preview-content">
+                <h3>AI + Creative Portfolio</h3>
+
+                <p>
+                    Present your projects with modern visuals,
+                    live previews, GitHub integrations,
+                    embedded workspaces, and premium landing page sections.
+                </p>
             </div>
-    </div>
 
-    <div id="overlay-container">
-        <div class="overlay-header">
-            <span id="overlay-title" style="font-weight: bold; color: var(--accent);">Resource Preview</span>
-            <button class="close-trigger" onclick="closeOverlay()">Close Workspace</button>
         </div>
-        <iframe id="overlay-iframe" src=""></iframe>
     </div>
 
-    <script>
-        const resources = [
-            { name: "Master Hub", url: "https://debeatzgh1.github.io/1/", cat: "System", desc: "Core ecosystem dashboard" },
-            { name: "AI Chat Assistant", url: "https://debeatzgh1.github.io/ai-chat/", cat: "Intelligence", desc: "Next-gen LLM interface" },
-            { name: "Community Feed", url: "https://debeatzgh1.github.io/posts/", cat: "Social", desc: "Latest updates and threads" },
-            { name: "Digital Portfolio", url: "https://debeatzgh1.github.io/Personal-Portfolio-site-/", cat: "Personal", desc: "Showcase of expertise" },
-            { name: "Collaborators Hub", url: "https://debeatzgh1.github.io/Debeatzgh-Collaborators-Hub/", cat: "Growth", desc: "Network & Build together" },
-            { name: "AI Starter Kit", url: "https://debeatzgh1.github.io/Decode-AI-starter-kit-/", cat: "Tools", desc: "Beginner AI resource guide" },
-            { name: "Side Hustle Guide", url: "https://debeatzgh1.github.io/The-Ultimate-Guide-to-Side-Hustle/", cat: "Business", desc: "Monetize your skills" },
-            { name: "Frontend Components", url: "https://debeatzgh1.github.io/firebase-front-end-components/", cat: "Dev", desc: "Reusable UI logic" },
-            { name: "Sales Engine", url: "https://debeatzgh1.github.io/sales/", cat: "Business", desc: "Convert leads to customers" },
-            { name: "Identity Bio", url: "https://msha.ke/debeatzgh", cat: "Profile", desc: "Unified link management" },
-            { name: "Tailwind Styling", url: "https://debeatzgh1.github.io/Modern-homepage-styling-with-TailwindCSS-/", cat: "Design", desc: "Modern utility CSS" },
-            { name: "Popup Generator", url: "https://debeatzgh1.github.io/popup-html-page-generator-blogger/", cat: "Marketin
+</section>
+
+<!-- STATS -->
+<section class="section">
+
+    <div class="stats">
+
+        <div class="stat-box">
+            <h2>20+</h2>
+            <p>Digital Projects</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>10K+</h2>
+            <p>Community Reach</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>AI</h2>
+            <p>Automation Solutions</p>
+        </div>
+
+        <div class="stat-box">
+            <h2>24/7</h2>
+            <p>Online Accessibility</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+
+    <div class="section-header">
+        <span class="section-tag">Featured Portfolio</span>
+
+        <h2 class="section-title">
+            Modern Showcase Projects
+        </h2>
+
+        <p class="section-desc">
+            Display your best digital products, startup ideas,
+            AI tools, blogging resources, design systems,
+            and community platforms in one premium interface.
+        </p>
+    </div>
+
+    <div class="grid">
+
+        <!-- CARD -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="AI Hub">
+
+            <div class="card-body">
+
+                <span class="card-tag">AI Platform</span>
+
+                <h3>AI Starter Kit</h3>
+
+                <p>
+                    Educational AI resources, prompts,
+                    productivity systems, and automation workflows
+                    for beginners and professionals.
+                </p>
+
+                <div class="card-actions">
+
+                    <a href="#" class="small-btn view-btn"
+                    onclick="openWorkspace('https://debeatzgh1.github.io/Decode-AI-starter-kit-/','AI Starter Kit')">
+                    Live Preview
+                    </a>
+
+                    <a href="https://debeatzgh1.github.io/Decode-AI-starter-kit-/"
+                    target="_blank"
+                    class="small-btn external-btn">
+                    Open External
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Business">
+
+            <div class="card-body">
+
+                <span class="card-tag">Business</span>
+
+                <h3>Side Hustle Guide</h3>
+
+                <p>
+                    Monetization ideas, digital products,
+                    online business systems, and startup resources
+                    for creators and entrepreneurs.
+                </p>
+
+                <div class="card-actions">
+
+                    <a href="#"
+                    class="small-btn view-btn"
+                    onclick="openWorkspace('https://debeatzgh1.github.io/The-Ultimate-Guide-to-Side-Hustle/','Side Hustle Guide')">
+                    Live Preview
+                    </a>
+
+                    <a href="https://debeatzgh1.github.io/The-Ultimate-Guide-to-Side-Hustle/"
+                    target="_blank"
+                    class="small-btn external-btn">
+                    Open External
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200&auto=format&fit=crop" alt="Portfolio">
+
+            <div class="card-body">
+
+                <span class="card-tag">Creative</span>
+
+                <h3>Personal Portfolio</h3>
+
+                <p>
+                    Professional showcase for skills,
+                    client projects, UI concepts,
+                    development systems, and achievements.
+                </p>
+
+                <div class="card-actions">
+
+                    <a href="#"
+                    class="small-btn view-btn"
+                    onclick="openWorkspace('https://debeatzgh1.github.io/Personal-Portfolio-site-/','Personal Portfolio')">
+                    Live Preview
+                    </a>
+
+                    <a href="https://debeatzgh1.github.io/Personal-Portfolio-site-/"
+                    target="_blank"
+                    class="small-btn external-btn">
+                    Open External
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CARD -->
+
+        <div class="card">
+
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Marketing">
+
+            <div class="card-body">
+
+                <span class="card-tag">Marketing</span>
+
+                <h3>Sales & Growth</h3>
+
+                <p>
+                    Landing pages, conversion funnels,
+                    lead generation tools, and digital
+                    marketing interfaces for startups.
+                </p>
+
+                <div class="card-actions">
+
+                    <a href="#"
+                    class="small-btn view-btn"
+                    onclick="openWorkspace('https://debeatzgh1.github.io/sales/','Sales Engine')">
+                    Live Preview
+                    </a>
+
+                    <a href="https://debeatzgh1.github.io/sales/"
+                    target="_blank"
+                    class="small-btn external-btn">
+                    Open External
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+
+    <div class="section-header">
+        <span class="section-tag">Professional Services</span>
+
+        <h2 class="section-title">
+            What You Can Showcase
+        </h2>
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="card-body">
+                <h3>AI Product Design</h3>
+                <p>Create premium AI interfaces, prompt libraries, automation systems, and productivity tools.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3>Startup Landing Pages</h3>
+                <p>Modern responsive pages optimized for GitHub Pages, mobile UX, and fast loading performance.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3>Digital Product Store</h3>
+                <p>Sell ebooks, templates, startup kits, AI prompts, and downloadable digital assets.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <h3>Community Platforms</h3>
+                <p>Build interactive directories, creator hubs, and resource collections with embedded previews.</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h2 style="font-size:2rem;margin-bottom:15px;">
+        Ready To Build Your Brand?
+    </h2>
+
+    <p>
+        Professional GitHub Pages landing page optimized for
+        creators, developers, startups, side hustlers,
+        AI educators, and digital entrepreneurs.
+    </p>
+
+    <div style="margin-top:30px;">
+        <a href="https://debeatzgh1.github.io/"
+        target="_blank"
+        class="btn btn-primary">
+        Visit Main Ecosystem
+        </a>
+    </div>
+
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="workspaceModal">
+
+    <div class="modal-header">
+
+        <h3 id="workspaceTitle">
+            Workspace Preview
+        </h3>
+
+        <button class="close-btn" onclick="closeWorkspace()">
+            Close
+        </button>
+
+    </div>
+
+    <iframe id="workspaceFrame"></iframe>
+
+</div>
+
+<script>
+
+function openWorkspace(url,title){
+
+    document.getElementById('workspaceModal').style.display='flex';
+    document.getElementById('workspaceFrame').src=url;
+    document.getElementById('workspaceTitle').innerText=title;
+
+}
+
+function closeWorkspace(){
+
+    document.getElementById('workspaceModal').style.display='none';
+    document.getElementById('workspaceFrame').src='';
+
+}
+
+</script>
+
+</body>
+</html>
